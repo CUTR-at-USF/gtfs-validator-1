@@ -40,11 +40,10 @@ task run(type: NpmTask) {
 }
 
 task webjar(type: Jar) {
-    from(fileTree("build")) {
+    from(fileTree(dir: "build", exclude: "*.jar")) {
         into "META-INF/resources"
     }
 }
 check.dependsOn(test)
 jar.dependsOn(bundle)
 jar.finalizedBy('webjar')
-inputExcludes: ["build/libs/react-client.jar"]
