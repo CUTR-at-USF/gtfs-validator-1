@@ -40,7 +40,7 @@ task run(type: NpmTask) {
 }
 
 task webjar(type: Jar) {
-    from(fileTree(dir: "build", exclude: "*.jar")) {
+    from(fileTree(dir: "build", exclude: "**/*.jar")) {
         into "META-INF/resources"
     }
 }
