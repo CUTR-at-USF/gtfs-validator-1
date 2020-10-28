@@ -41,7 +41,7 @@ jobs:
         with:
           arguments: shadowJar
       - name: Validate dataset from -- USF Bull Runner (Tampa, FL, USA)
-        run: java -jar application/cli-app/build/libs/*.jar -u https://github.com/CUTR-at-USF/bullrunner-gtfs-realtime-generator/raw/master/bullrunner-gtfs.zip -i usf-bullrunner-fl-us.zip -e input -o output
+        run: java -jar application/cli-app/build/libs/*.jar -u https://github.com/CUTR-at-USF/bullrunner-gtfs-realtime-generator/raw/master/bullrunner-gtfs.zip -i usf-bullrunner-fl-us.zip -e input -o output -abort_on_error false
       - name: Validate dataset from -- MBTA
         run: java -jar application/cli-app/build/libs/*.jar -u https://cdn.mbta.com/MBTA_GTFS.zip -i mbta.zip -e input -o output
       - name: Validate dataset from issue 399 -- Monterey-Salinas Transit
